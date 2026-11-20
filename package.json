@@ -1,0 +1,56 @@
+{
+  "name": "rxdb-effect-schema",
+  "version": "0.1.0",
+  "description": "Author RxDB collection schemas with Effect Schema. Converts an Effect Schema into an RxJsonSchema without any RxDB runtime dependency.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "example": "npm run build && node examples/basic.mjs",
+    "prepublishOnly": "npm run build",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "rxdb",
+    "effect",
+    "effect-schema",
+    "json-schema",
+    "validation"
+  ],
+  "license": "MIT",
+  "author": "nickchomey",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nickchomey/rxdb-effect-schema.git"
+  },
+  "homepage": "https://github.com/nickchomey/rxdb-effect-schema#readme",
+  "bugs": {
+    "url": "https://github.com/nickchomey/rxdb-effect-schema/issues"
+  },
+  "peerDependencies": {
+    "effect": ">=4.1.4 <5",
+    "rxdb": ">=17 <18"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "effect": "4.1.4",
+    "rxdb": "17.6.0",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.7"
+  }
+}
